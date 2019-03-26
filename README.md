@@ -25,3 +25,7 @@ ssh -i ~/.ssh/appuser -A appuser@35.210.170.206 -t ssh 10.132.0.3
 
 bastion_IP = 35.210.170.206
 someinternalhost_IP = 10.132.0.3
+
+testapp_IP = 35.195.181.241
+testapp_port = 9292
+
