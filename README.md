@@ -1,26 +1,13 @@
-# README HW №5
-### **Созданы два инстанса:**
-**bastion**
-IP 35.210.170.206, 10.132.0.2
+# README HW №6
+### **Работа с gcloud:**
+На локальную ОС произведена установка gloud и привязан аккаунт\n
+С помощью gcloud установлен инстанс, созданы скрипты для установки ruby, mongo и деплоя puma
 
-**someinternalhost**
-IP 10.132.0.3
+### **Установка инстанса **
 
-На bastion поднят VPN-сервер pritunl.
-
-### **Подключение по SSH**
-
-Запуск ssh-agent
+Используя gcloud с параметром startup-script
 ```
-eval $(ssh-agent)
-```
-Добавление ssh-ключ в агента
-```
-ssh-add ~/.ssh/appuser
-```
-Подключения к someinternalhost в одну команду:
-```
-ssh -i ~/.ssh/appuser -A appuser@35.210.170.206 -t ssh 10.132.0.3
+gcloud compute instances create reddit-app  --boot-disk-size=10GB   --image-family ubuntu-1604-lts   --image-project=ubuntu-os-cloud   --machine-type=g1-small   --tags puma-server   --restart-on-failure --metadata-from-file startup-script=startup_script.sh
 ```
 
 bastion_IP = 35.210.170.206
