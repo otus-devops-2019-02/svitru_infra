@@ -1,6 +1,6 @@
 # README HW №6
 ### **Работа с gcloud:**
-На локальную ОС произведена установка gloud и привязан аккаунт\n
+На локальную ОС произведена установка gcloud и привязан аккаунт
 С помощью gcloud установлен инстанс, созданы скрипты для установки ruby, mongo и деплоя puma
 
 ### **Установка инстанса **
@@ -13,6 +13,6 @@ gcloud compute instances create reddit-app  --boot-disk-size=10GB   --image-fami
 bastion_IP = 35.210.170.206
 someinternalhost_IP = 10.132.0.3
 
-testapp_IP = 35.195.181.241
+testapp_IP = 35.233.50.234
 testapp_port = 9292
 
