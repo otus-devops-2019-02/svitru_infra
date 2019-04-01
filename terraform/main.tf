@@ -8,7 +8,7 @@ provider "google" {
   version = "2.0.0"
 
   # ID проекта
-  project = "infra-908766"
+  project = "infra-235108"
 
   region = "europe-west-1"
 }
