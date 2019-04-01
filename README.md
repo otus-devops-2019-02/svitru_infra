@@ -1,18 +1,15 @@
-# README HW №6
-### **Работа с gcloud:**
-На локальную ОС произведена установка gcloud и привязан аккаунт
-С помощью gcloud установлен инстанс, созданы скрипты для установки ruby, mongo и деплоя puma
+# README HW №7
+### **Работа с Packer:**
+На локальную ОС произведена установка packer
+С помощью Packer создан image, содержащий в себе установленные ruby, mongo
 
-### **Установка инстанса **
-
-Используя gcloud с параметром startup-script
+Запуск создания image используя файл переменных:
 ```
-gcloud compute instances create reddit-app  --boot-disk-size=10GB   --image-family ubuntu-1604-lts   --image-project=ubuntu-os-cloud   --machine-type=g1-small   --tags puma-server   --restart-on-failure --metadata-from-file startup-script=startup_script.sh
+packer build -var-file variables.json ubuntu16.json
 ```
+### **Установка инстанса**
 
-bastion_IP = 35.210.170.206
-someinternalhost_IP = 10.132.0.3
-
-testapp_IP = 35.233.50.234
-testapp_port = 9292
-
+Используя gcloud через запуск скрипта
+```
+./config-scripts/create-reddit-vm.sh
+```
