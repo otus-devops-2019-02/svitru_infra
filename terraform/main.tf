@@ -30,5 +30,9 @@ resource "google_compute_instance" "app" {
     # использовать ephemeral IP для доступа из Интернет
     access_config {}
   }
+  metadata {
+    # путь до публичного ключа
+    ssh-keys = "appuser:${file("~/.ssh/appuser.pub")}"
+  }
 }
 
