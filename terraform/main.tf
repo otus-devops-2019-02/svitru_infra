@@ -17,6 +17,7 @@ resource "google_compute_instance" "app" {
   name = "reddit-app"
   machine_type = "g1-small"
   zone = "europe-west1-b"
+  tags = ["reddit-app"]
   # определение загрузочного диска
   boot_disk {
     initialize_params {
@@ -34,5 +35,20 @@ resource "google_compute_instance" "app" {
     # путь до публичного ключа
     ssh-keys = "appuser:${file("~/.ssh/appuser.pub")}"
   }
+}
+
+resource "google_compute_firewall" "firewall_puma" {
+  name = "allow-puma-default"
+  # Название сети, в которой действует правило
+  network = "default"
+  # Какой доступ разрешить
+  allow {
+    protocol = "tcp"
+    ports = ["9292"]
+  }
+  # Каким адресам разрешаем доступ
+  source_ranges = ["0.0.0.0/0"]
+  # Правило применимо для инстансов с перечисленными тэгами
+  target_tags = ["reddit-app"]
 }
 
