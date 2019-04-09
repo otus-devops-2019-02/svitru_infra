@@ -35,6 +35,14 @@ resource "google_compute_instance" "app" {
     # путь до публичного ключа
     ssh-keys = "appuser:${file("~/.ssh/appuser.pub")}"
   }
+  connection {
+    type = "ssh"
+    user = "appuser"
+    agent = false
+    # путь до приватного ключа
+    private_key = "${file("~/.ssh/appuser")}"
+  }
+
   provisioner "file" {
     source = "files/puma.service"
     destination = "/tmp/puma.service"
