@@ -1,4 +1,4 @@
-# README HW №7
+# README HW №8
 ### **Работа с terraform:**
 На локальную ОС произведена установка terraform
 
