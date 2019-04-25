@@ -8,4 +8,3 @@ variable region {
   # Значение по умолчанию
   default = "europe-west1"
 }
-
