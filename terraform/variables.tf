@@ -29,3 +29,13 @@ variable zone {
   # Значение по умолчанию
   default = "europe-west1-b"
 }
+
+variable app_disk_image {
+  description = "Disk image for reddit app"
+  default     = "reddit-app-base-1556203387"
+}
+
+variable db_disk_image {
+  description = "Disk image for reddit db"
+  default     = "reddit-db-base-1556202894"
+}
