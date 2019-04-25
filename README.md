@@ -1,15 +1,20 @@
-# README HW №7
-### **Работа с Packer:**
-На локальную ОС произведена установка packer
-С помощью Packer создан image, содержащий в себе установленные ruby, mongo
+# README HW №8
+### **Работа с terraform:**
+На локальную ОС произведена установка terraform
 
-Запуск создания image используя файл переменных:
-```
-packer build -var-file variables.json ubuntu16.json
-```
-### **Установка инстанса**
+Добавлены конфигурационные файлы terraform для создания instance в gcloud
 
-Используя gcloud через запуск скрипта
+С помощью terraform установлен инстанс, созданы скрипты для установки ruby, mongo и деплоя puma
+
+Входные переменные, используемые в main.tf вынесли в variables.tf
+
+
+
+### **Установка инстанса **
+
+Используя terraform: 
 ```
-./config-scripts/create-reddit-vm.sh
+terraform plan
+terraform apply
+
 ```
