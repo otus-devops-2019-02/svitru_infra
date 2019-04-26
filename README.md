@@ -25,4 +25,5 @@
 terraform plan
 terraform apply
 ```
+EOF
 
