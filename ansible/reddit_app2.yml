@@ -21,7 +21,7 @@
   hosts: app
   tags: app-tag
   vars:
-   db_host: 10.132.0.36
+   db_host: 10.132.0.38
   tasks:
     - name: Add unit file for Puma
       become: true
