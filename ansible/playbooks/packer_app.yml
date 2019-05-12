@@ -1,20 +1,6 @@
 - name: Install Ruby and Bundler
   hosts: all
   become: true
-  tasks:
-    - name: Update cache 
-      apt:
-        update_cache: yes
-  
-    - name: Install ruby-full
-      apt:
-        name: ruby-full
-
-    - name: Install ruby-bundler
-      apt:
-        name: ruby-bundler
-
-    - name: Install build-essential
-      apt:
-        name: build-essential
+  roles:
+    - app
 
